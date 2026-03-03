@@ -1,0 +1,44 @@
+#pragma once
+#define IMGUI_DEFINE_MATH_OPERATORS
+#include <memory>
+#include <d3d11.h>
+#include <imgui/imgui.h>
+#include <imgui/backends/imgui_impl_win32.h>
+#include <imgui/backends/imgui_impl_dx11.h>
+
+struct detail {
+	HWND window = nullptr;
+	WNDCLASSEX window_class = {};
+	ID3D11Device* device = nullptr;
+	ID3D11DeviceContext* device_context = nullptr;
+	ID3D11RenderTargetView* render_target_view = nullptr;
+	IDXGISwapChain* swap_chain = nullptr;
+};
+
+class renderer {
+public:
+	renderer();
+	~renderer();
+
+	bool running = false;
+
+	void start_render();
+	void render_menu();
+	void render_watermark();
+	void render_keybind_list();
+	void render_visuals();
+	void end_render();
+
+	bool create_device();
+	bool create_window();
+	bool create_imgui();
+
+	std::unique_ptr<detail> detail_ptr = std::make_unique<detail>();
+private:
+	void destroy_device();
+	void destroy_window();
+	void destroy_imgui();
+};
+
+inline std::unique_ptr<renderer> render = std::make_unique<renderer>();
+

@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="cheat/draingang.vcxproj" Id="5f41aca4-b4c6-46df-8103-3468f0a11433" />
+</Solution>

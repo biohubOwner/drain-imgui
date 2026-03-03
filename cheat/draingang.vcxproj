@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{5f41aca4-b4c6-46df-8103-3468f0a11433}</ProjectGuid>
+    <RootNamespace>senchapublic</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>cheat</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>../build</OutDir>
+    <IntDir>../build/extra</IntDir>
+    <IncludePath>src;ext;ext\freetype\include;ext\imgui;$(IncludePath)</IncludePath>
+    <LibraryPath>ext\freetype\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp23</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;freetype.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ext\clipper2lib\include\clipper2\clipper.core.h" />
+    <ClInclude Include="ext\clipper2lib\include\clipper2\clipper.engine.h" />
+    <ClInclude Include="ext\clipper2lib\include\clipper2\clipper.export.h" />
+    <ClInclude Include="ext\clipper2lib\include\clipper2\clipper.h" />
+    <ClInclude Include="ext\clipper2lib\include\clipper2\clipper.minkowski.h" />
+    <ClInclude Include="ext\clipper2lib\include\clipper2\clipper.offset.h" />
+    <ClInclude Include="ext\clipper2lib\include\clipper2\clipper.rectclip.h" />
+    <ClInclude Include="ext\clipper2lib\include\clipper2\clipper.version.h" />
+    <ClInclude Include="ext\freetype\include\freetype\config\ftconfig.h" />
+    <ClInclude Include="ext\freetype\include\freetype\config\ftheader.h" />
+    <ClInclude Include="ext\freetype\include\freetype\config\ftmodule.h" />
+    <ClInclude Include="ext\freetype\include\freetype\config\ftoption.h" />
+    <ClInclude Include="ext\freetype\include\freetype\config\ftstdlib.h" />
+    <ClInclude Include="ext\freetype\include\freetype\config\integer-types.h" />
+    <ClInclude Include="ext\freetype\include\freetype\config\mac-support.h" />
+    <ClInclude Include="ext\freetype\include\freetype\config\public-macros.h" />
+    <ClInclude Include="ext\freetype\include\freetype\freetype.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftadvanc.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftbbox.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftbdf.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftbitmap.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftbzip2.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftcache.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftchapters.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftcid.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftcolor.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftdriver.h" />
+    <ClInclude Include="ext\freetype\include\freetype\fterrdef.h" />
+    <ClInclude Include="ext\freetype\include\freetype\fterrors.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftfntfmt.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftgasp.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftglyph.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftgxval.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftgzip.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftimage.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftincrem.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftlcdfil.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftlist.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftlogging.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftlzw.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftmac.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftmm.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftmodapi.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftmoderr.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftotval.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftoutln.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftparams.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftpfr.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftrender.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftsizes.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftsnames.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftstroke.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftsynth.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftsystem.h" />
+    <ClInclude Include="ext\freetype\include\freetype\fttrigon.h" />
+    <ClInclude Include="ext\freetype\include\freetype\fttypes.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ftwinfnt.h" />
+    <ClInclude Include="ext\freetype\include\freetype\otsvg.h" />
+    <ClInclude Include="ext\freetype\include\freetype\t1tables.h" />
+    <ClInclude Include="ext\freetype\include\freetype\ttnameid.h" />
+    <ClInclude Include="ext\freetype\include\freetype\tttables.h" />
+    <ClInclude Include="ext\freetype\include\freetype\tttags.h" />
+    <ClInclude Include="ext\freetype\include\ft2build.h" />
+    <ClInclude Include="ext\imgui\backends\imgui_impl_dx11.h" />
+    <ClInclude Include="ext\imgui\backends\imgui_impl_win32.h" />
+    <ClInclude Include="ext\imgui\ckeybind\ckeybind.h" />
+    <ClInclude Include="ext\imgui\imconfig.h" />
+    <ClInclude Include="ext\imgui\imgui.h" />
+    <ClInclude Include="ext\imgui\imgui_freetype.h" />
+    <ClInclude Include="ext\imgui\imgui_internal.h" />
+    <ClInclude Include="ext\imgui\imstb_rectpack.h" />
+    <ClInclude Include="ext\imgui\imstb_textedit.h" />
+    <ClInclude Include="ext\imgui\imstb_truetype.h" />
+    <ClInclude Include="ext\stb-master\deprecated\rrsprintf.h" />
+    <ClInclude Include="ext\stb-master\deprecated\stb.h" />
+    <ClInclude Include="ext\stb-master\deprecated\stb_image_resize.h" />
+    <ClInclude Include="ext\stb-master\deprecated\stretchy_buffer.h" />
+    <ClInclude Include="ext\stb-master\stb_connected_components.h" />
+    <ClInclude Include="ext\stb-master\stb_c_lexer.h" />
+    <ClInclude Include="ext\stb-master\stb_divide.h" />
+    <ClInclude Include="ext\stb-master\stb_ds.h" />
+    <ClInclude Include="ext\stb-master\stb_dxt.h" />
+    <ClInclude Include="ext\stb-master\stb_easy_font.h" />
+    <ClInclude Include="ext\stb-master\stb_herringbone_wang_tile.h" />
+    <ClInclude Include="ext\stb-master\stb_hexwave.h" />
+    <ClInclude Include="ext\stb-master\stb_image.h" />
+    <ClInclude Include="ext\stb-master\stb_image_resize2.h" />
+    <ClInclude Include="ext\stb-master\stb_image_resize_test\old_image_resize.h" />
+    <ClInclude Include="ext\stb-master\stb_image_write.h" />
+    <ClInclude Include="ext\stb-master\stb_include.h" />
+    <ClInclude Include="ext\stb-master\stb_leakcheck.h" />
+    <ClInclude Include="ext\stb-master\stb_perlin.h" />
+    <ClInclude Include="ext\stb-master\stb_rect_pack.h" />
+    <ClInclude Include="ext\stb-master\stb_sprintf.h" />
+    <ClInclude Include="ext\stb-master\stb_textedit.h" />
+    <ClInclude Include="ext\stb-master\stb_tilemap_editor.h" />
+    <ClInclude Include="ext\stb-master\stb_truetype.h" />
+    <ClInclude Include="ext\stb-master\stb_voxel_render.h" />
+    <ClInclude Include="ext\stb-master\tests\caveview\caveview.h" />
+    <ClInclude Include="ext\stb-master\tests\caveview\cave_parse.h" />
+    <ClInclude Include="ext\stb-master\tests\caveview\glext.h" />
+    <ClInclude Include="ext\stb-master\tests\caveview\glext_list.h" />
+    <ClInclude Include="ext\stb-master\tests\caveview\stb_gl.h" />
+    <ClInclude Include="ext\stb-master\tests\caveview\stb_glprog.h" />
+    <ClInclude Include="ext\stb-master\tests\oversample\stb_wingraph.h" />
+    <ClInclude Include="ext\stb-master\tests\prerelease\stb_lib.h" />
+    <ClInclude Include="src\features\cheats\aimbot\triggerbot.h" />
+    <ClInclude Include="src\features\cheats\cheat_base.h" />
+    <ClInclude Include="src\features\cheats\cheat_manager.h" />
+    <ClInclude Include="src\features\cheats\misc\anti_afk.h" />
+    <ClInclude Include="src\features\cheats\misc\anti_aim.h" />
+    <ClInclude Include="src\features\cheats\misc\auto_features.h" />
+    <ClInclude Include="src\features\cheats\misc\character_manipulation.h" />
+    <ClInclude Include="src\features\cheats\misc\fly_hack.h" />
+    <ClInclude Include="src\features\cheats\misc\free_camera.h" />
+    <ClInclude Include="src\features\cheats\misc\ideal_peak.h" />
+    <ClInclude Include="src\features\cheats\misc\jump_bug.h" />
+    <ClInclude Include="src\features\cheats\misc\long_neck.h" />
+    <ClInclude Include="src\features\cheats\misc\map_parser.h" />
+    <ClInclude Include="src\features\cheats\misc\misc.h" />
+    <ClInclude Include="src\features\cheats\misc\misc_utils.h" />
+    <ClInclude Include="src\features\cheats\misc\no_clip.h" />
+    <ClInclude Include="src\features\cheats\misc\no_send.h" />
+    <ClInclude Include="src\features\cheats\misc\ping_spike.h" />
+    <ClInclude Include="src\features\cheats\misc\rage_misc.h" />
+    <ClInclude Include="src\features\cheats\misc\sounds.h" />
+    <ClInclude Include="src\features\cheats\misc\sound_features.h" />
+    <ClInclude Include="src\features\cheats\misc\speed_hack.h" />
+    <ClInclude Include="src\features\cheats\misc\waypoint.h" />
+    <ClInclude Include="src\features\cheats\misc\world_visuals.h" />
+    <ClInclude Include="src\features\cheats\aimbot\aimbot.h" />
+    <ClInclude Include="src\features\cheats\visuals\visualizer\mesh_utils.h" />
+    <ClInclude Include="src\features\sdk\math\math.h" />
+    <ClInclude Include="src\features\sdk\offsets\offsets.h" />
+    <ClInclude Include="src\features\settings\config.h" />
+    <ClInclude Include="src\globals.h" />
+    <ClInclude Include="src\features\cache\cache.h" />
+    <ClInclude Include="src\features\cheats\visuals\visualizer\visualizer.h" />
+    <ClInclude Include="src\features\cheats\visuals\visuals.h" />
+    <ClInclude Include="src\features\initalize\initalize.h" />
+    <ClInclude Include="src\features\sdk\sdk.h" />
+    <ClInclude Include="src\manager\manager.h" />
+    <ClInclude Include="src\memory\driver_interface.h" />
+    <ClInclude Include="src\memory\memory.h" />
+    <ClInclude Include="src\output\output.h" />
+    <ClInclude Include="src\render\framework\data\fonts.h" />
+    <ClInclude Include="src\render\framework\data\images.h" />
+    <ClInclude Include="src\render\framework\settings\colors.h" />
+    <ClInclude Include="src\render\framework\settings\elements.h" />
+    <ClInclude Include="src\render\framework\settings\functions.h" />
+    <ClInclude Include="src\render\framework\settings\variables.h" />
+    <ClInclude Include="src\render\render.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ext\clipper2lib\src\clipper.engine.cpp" />
+    <ClCompile Include="ext\clipper2lib\src\clipper.offset.cpp" />
+    <ClCompile Include="ext\clipper2lib\src\clipper.rectclip.cpp" />
+    <ClCompile Include="ext\imgui\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="ext\imgui\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="ext\imgui\imgui.cpp" />
+    <ClCompile Include="ext\imgui\imgui_draw.cpp" />
+    <ClCompile Include="ext\imgui\imgui_freetype.cpp" />
+    <ClCompile Include="ext\imgui\imgui_tables.cpp" />
+    <ClCompile Include="ext\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="ext\stb-master\stb_vorbis.c" />
+    <ClCompile Include="src\features\cache\cache.cpp" />
+    <ClCompile Include="src\features\cheats\aimbot\triggerbot.cpp" />
+    <ClCompile Include="src\features\cheats\misc\anti_afk.cpp" />
+    <ClCompile Include="src\features\cheats\misc\anti_aim.cpp" />
+    <ClCompile Include="src\features\cheats\misc\auto_features.cpp" />
+    <ClCompile Include="src\features\cheats\misc\character_manipulation.cpp" />
+    <ClCompile Include="src\features\cheats\misc\fly_hack.cpp" />
+    <ClCompile Include="src\features\cheats\misc\free_camera.cpp" />
+    <ClCompile Include="src\features\cheats\misc\ideal_peak.cpp" />
+    <ClCompile Include="src\features\cheats\misc\jump_bug.cpp" />
+    <ClCompile Include="src\features\cheats\misc\long_neck.cpp" />
+    <ClCompile Include="src\features\cheats\misc\map_parser.cpp" />
+    <ClCompile Include="src\features\cheats\misc\misc.cpp" />
+    <ClCompile Include="src\features\cheats\misc\misc_utils.cpp" />
+    <ClCompile Include="src\features\cheats\misc\no_clip.cpp" />
+    <ClCompile Include="src\features\cheats\misc\no_send.cpp" />
+    <ClCompile Include="src\features\cheats\misc\ping_spike.cpp" />
+    <ClCompile Include="src\features\cheats\misc\rage_misc.cpp" />
+    <ClCompile Include="src\features\cheats\misc\sound_features.cpp" />
+    <ClCompile Include="src\features\cheats\misc\speed_hack.cpp" />
+    <ClCompile Include="src\features\cheats\misc\waypoint.cpp" />
+    <ClCompile Include="src\features\cheats\misc\world_visuals.cpp" />
+    <ClCompile Include="src\features\cheats\aimbot\aimbot.cpp" />
+    <ClCompile Include="src\features\cheats\visuals\visuals.cpp" />
+    <ClCompile Include="src\features\initalize\initalize.cpp" />
+    <ClCompile Include="src\features\sdk\sdk.cpp" />
+    <ClCompile Include="src\features\settings\config.cpp" />
+    <ClCompile Include="src\manager\manager.cpp" />
+    <ClCompile Include="src\memory\driver_interface.cpp" />
+    <ClCompile Include="src\memory\memory.cpp" />
+    <ClCompile Include="src\render\framework\elements\button.cpp" />
+    <ClCompile Include="src\render\framework\elements\checkbox.cpp" />
+    <ClCompile Include="src\render\framework\elements\child.cpp" />
+    <ClCompile Include="src\render\framework\elements\coloredit.cpp" />
+    <ClCompile Include="src\render\framework\elements\draw.cpp" />
+    <ClCompile Include="src\render\framework\elements\dropdown.cpp" />
+    <ClCompile Include="src\render\framework\elements\helpers.cpp" />
+    <ClCompile Include="src\render\framework\elements\keybind.cpp" />
+    <ClCompile Include="src\render\framework\elements\notify.cpp" />
+    <ClCompile Include="src\render\framework\elements\section.cpp" />
+    <ClCompile Include="src\render\framework\elements\slider.cpp" />
+    <ClCompile Include="src\render\framework\elements\table.cpp" />
+    <ClCompile Include="src\render\framework\elements\textfield.cpp" />
+    <ClCompile Include="src\render\framework\elements\window.cpp" />
+    <ClCompile Include="src\render\framework\gui.cpp" />
+    <ClCompile Include="src\render\render.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
