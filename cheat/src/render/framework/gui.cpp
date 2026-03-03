@@ -13,10 +13,6 @@
 #include "render/render.h"
 #include "../../features/cheats/misc/map_parser.h"
 
-#if __has_include("../../../divinity-menu-master/imgui_internal.h")
-#include "../../../divinity-menu-master/imgui_internal.h"
-#endif
-
 #define STB_IMAGE_IMPLEMENTATION
 #include "../../../ext/stb-master/stb_image.h"
 
@@ -201,7 +197,9 @@ void c_gui::render()
 								}
 								else if (section == 2)
 								{
+									static const char* pitch_bases[] = { "Custom", "Down", "Up", "Zero" };
 									gui->checkbox("Enable Anti-Aim", &globals::misc::angles_enabled, &globals::misc::angles_key, &globals::misc::angles_mode);
+									gui->dropdown("Pitch Base", &globals::misc::pitch_base, pitch_bases, IM_ARRAYSIZE(pitch_bases));
 									gui->slider_float("Pitch", &globals::misc::pitch_value, -89.0f, 89.0f, false, "%.1f");
 									gui->slider_float("Yaw", &globals::misc::yaw_value, -180.0f, 180.0f, false, "%.1f");
 									gui->checkbox("Yaw Jitter", &globals::misc::yaw_jitter);
@@ -246,7 +244,7 @@ void c_gui::render()
 								}
 								else if (section == 2)
 								{
-									static const char* yaw_bases[] = { "Camera", "Target", "Spin" };
+									static const char* yaw_bases[] = { "Custom", "Backward", "Right", "Left", "Spin" };
 									gui->dropdown("Yaw Base", &globals::misc::yaw_base, yaw_bases, IM_ARRAYSIZE(yaw_bases));
 									gui->slider_float("Spin Speed", &globals::misc::spin_speed, 0.0f, 500.0f, false, "%.1f");
 									gui->checkbox("Roll", &globals::misc::roll);

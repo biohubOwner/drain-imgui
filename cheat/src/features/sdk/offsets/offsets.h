@@ -171,7 +171,8 @@ namespace Offsets {
     namespace GuiObject {
          inline constexpr uintptr_t BackgroundColor3 = 0x538;
          inline constexpr uintptr_t BackgroundTransparency = 0x544;
-         inline constexpr uintptr_t BorderColor3 = 0x544;
+         // BorderColor3 shares the same underlying field/offset as BackgroundTransparency in this dump.
+         inline constexpr uintptr_t BorderColor3 = BackgroundTransparency;
          inline constexpr uintptr_t Image = 0x9f0;
          inline constexpr uintptr_t LayoutOrder = 0x574;
          inline constexpr uintptr_t Position = 0x508;
@@ -217,7 +218,7 @@ namespace Offsets {
          inline constexpr uintptr_t RequiresNeck = 0x1e0;
          inline constexpr uintptr_t RigType = 0x1c8;
          inline constexpr uintptr_t SeatPart = 0x120;
-         inline constexpr uintptr_t Sit = 0x1e0;
+         inline constexpr uintptr_t Sit = 0x1e1;
          inline constexpr uintptr_t TargetPoint = 0x164;
          inline constexpr uintptr_t Walkspeed = 0x1d4;
          inline constexpr uintptr_t WalkspeedCheck = 0x3c0;
@@ -518,7 +519,8 @@ namespace Offsets {
          inline constexpr uintptr_t GravityContainer = World;
          inline constexpr uintptr_t PrimitivesPointer1 = World;
          inline constexpr uintptr_t PrimitivesPointer2 = 0x240;
-         inline constexpr uintptr_t WorldStepsPerSecond = 0x1a0;
+         // Legacy alias kept for older call-sites; this is world-relative in current dump.
+         inline constexpr uintptr_t WorldStepsPerSecond = 0x660;
     }
 
     namespace World {
@@ -527,6 +529,7 @@ namespace Offsets {
          inline constexpr uintptr_t Gravity = 0x1d0;
          inline constexpr uintptr_t Primitives = 0x240;
          inline constexpr uintptr_t worldStepsPerSec = 0x660;
+         inline constexpr uintptr_t WorldStepsPerSecond = worldStepsPerSec;
     }
 
 }
