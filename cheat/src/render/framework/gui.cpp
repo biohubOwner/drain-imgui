@@ -153,7 +153,7 @@ void c_gui::render()
 
 		{
 			static int section = 0;
-				static int style_subtab = 0;
+			static int style_subtab = 0;
 
 			if (var->gui.current_section[0])
 			{

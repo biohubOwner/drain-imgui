@@ -149,7 +149,6 @@ namespace Offsets {
          inline constexpr uintptr_t Density = FarIntensity;
     }
 
-
     namespace FFlags {
          inline constexpr uintptr_t DebugDisableTimeoutDisconnect = 0x782e208;
          inline constexpr uintptr_t EnableLoadModule = 0x7811c08;
